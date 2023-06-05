@@ -58,11 +58,29 @@ public class Main {
 
         String labas = stringMap.getPair("Labas");
         System.out.println(labas);
+        System.out.println("_".repeat(50));
+
+        ListOfNumbers list1 = new ListOfNumbers();
+        list1.addNumber(10.7);
+        list1.addNumber(3.6);
+        list1.addNumber(1.3);
+        System.out.println(list1.getAverage());
+
+        ListOfNumbers list2 = new ListOfNumbers();
+        list2.addNumber(22.3);
+        list2.addNumber(100.4);
+        list2.addNumber(2.2);
+        System.out.println(list2.getAverage());
 
 
+        ListOfNumbers list3 = new ListOfNumbers();
+        list3.addNumber(1.1);
+        list3.addNumber(3.3);
+        list3.addNumber(1.9);
+        System.out.println(list3.getAverage());
 
 
-
+        System.out.println(findWithMaxAverage(list1, list2, list3));
 
 
 
@@ -72,6 +90,18 @@ public class Main {
         for (T t: elements) {
             System.out.println(t);
         }
+    }
+
+    public static ListOfNumbers findWithMaxAverage(ListOfNumbers...listsList) {
+        double max = Double.MIN_VALUE;
+        ListOfNumbers biggest = new ListOfNumbers();
+        for (ListOfNumbers list: listsList) {
+            if(list.getAverage() > max) {
+                max = list.getAverage();
+                biggest = list;
+            }
+        }
+        return biggest;
     }
 
 
