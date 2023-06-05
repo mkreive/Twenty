@@ -45,6 +45,22 @@ public class Main {
         System.out.println("_".repeat(50));
 
 
+        MyMap<DnsProvider, DnsServer> dnsMap = new MyMap<>();
+        dnsMap.setPair(DnsProvider.GOOGLE, new DnsServer("8.8.8.8", "8.8.4.4"));
+        dnsMap.setPair(DnsProvider.CLOUDFLARE, new DnsServer("1.1.1.1.", "1.0.0.1"));
+
+        DnsServer googleDns = dnsMap.getPair(DnsProvider.GOOGLE);
+        System.out.println(googleDns);
+
+        MyMap<String, String> stringMap = new MyMap<>();
+        stringMap.setPair("Labas", "Hello");
+        stringMap.setPair("Pasaulis", "World");
+
+        String labas = stringMap.getPair("Labas");
+        System.out.println(labas);
+
+
+
 
 
 

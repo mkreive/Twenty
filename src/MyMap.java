@@ -1,15 +1,10 @@
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
-public class MyMap <K, V extends Pair> {
-    List<Pair> pairList;
-
+public class MyMap <K, V> {
     HashMap<K, V> myMap;
 
     public MyMap() {
         myMap = new HashMap<>();
-        pairList = new ArrayList<>();
     }
 
     public void setPair(K key, V value) {
